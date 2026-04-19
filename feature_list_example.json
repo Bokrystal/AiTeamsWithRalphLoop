@@ -1,0 +1,103 @@
+{
+  "version": "1.0",
+  "project": "赛博朋克风格个人博客",
+  "description": "一个具有赛博朋克美学风格的现代化个人博客网站",
+  "design_language": "赛博朋克 (Cyberpunk) - 霓虹色彩、科技感、未来主义",
+  "figma_file_url": "https://www.figma.com/file/example/project-design",
+  "created_at": "2026-04-19T10:00:00Z",
+  "last_updated": "2026-04-19T10:00:00Z",
+  "features": [
+    {
+      "id": "nav-001",
+      "name": "顶部导航栏",
+      "description": "响应式导航栏，包含Logo、菜单项、暗黑模式切换按钮",
+      "priority": 1,
+      "passes": false,
+      "design_references": ["frame:Header", "component:NavBar", "component:DarkModeToggle"],
+      "estimated_effort": "medium",
+      "depends_on": [],
+      "files_expected": ["src/components/NavBar.tsx", "src/styles/nav.css"],
+      "acceptance_criteria": [
+        "桌面端显示水平导航，移动端显示汉堡菜单",
+        "暗黑模式切换按钮功能正常",
+        "hover/active状态有视觉反馈",
+        "符合WCAG AA可访问性标准"
+      ]
+    },
+    {
+      "id": "hero-002",
+      "name": "英雄区域 (Hero Section)",
+      "description": "网站首屏大图区域，包含主标题、副标题、行动按钮",
+      "priority": 2,
+      "passes": false,
+      "design_references": ["frame:Hero", "component:HeroSection"],
+      "estimated_effort": "small",
+      "depends_on": ["nav-001"],
+      "files_expected": ["src/components/Hero.tsx", "src/styles/hero.css"],
+      "acceptance_criteria": [
+        "全屏高度响应式布局",
+        "背景图片或渐变效果",
+        "标题文字有赛博朋克风格的霓虹光晕",
+        "行动按钮有悬停动画"
+      ]
+    },
+    {
+      "id": "posts-003",
+      "name": "博客文章列表",
+      "description": "展示博客文章的网格列表，支持过滤和分页",
+      "priority": 3,
+      "passes": false,
+      "design_references": ["frame:BlogList", "component:PostCard"],
+      "estimated_effort": "large",
+      "depends_on": ["hero-002"],
+      "files_expected": ["src/components/PostList.tsx", "src/components/PostCard.tsx", "src/styles/posts.css"],
+      "acceptance_criteria": [
+        "响应式网格布局 (3列桌面，2列平板，1列移动)",
+        "文章卡片有悬停效果",
+        "支持按标签过滤",
+        "分页功能正常工作"
+      ]
+    },
+    {
+      "id": "footer-004",
+      "name": "页面底部",
+      "description": "网站底部区域，包含版权信息、社交链接、站点地图",
+      "priority": 4,
+      "passes": false,
+      "design_references": ["frame:Footer"],
+      "estimated_effort": "small",
+      "depends_on": ["posts-003"],
+      "files_expected": ["src/components/Footer.tsx", "src/styles/footer.css"],
+      "acceptance_criteria": [
+        "固定底部或粘性底部",
+        "社交图标链接正确",
+        "移动端布局优化",
+        "版权信息自动更新年份"
+      ]
+    },
+    {
+      "id": "darkmode-005",
+      "name": "全局暗黑模式",
+      "description": "全站暗黑/亮明主题切换，持久化用户偏好",
+      "priority": 5,
+      "passes": false,
+      "design_references": ["theme:DarkMode"],
+      "estimated_effort": "medium",
+      "depends_on": ["nav-001", "hero-002", "posts-003", "footer-004"],
+      "files_expected": ["src/contexts/ThemeContext.tsx", "src/styles/theme.css", "src/hooks/useTheme.ts"],
+      "acceptance_criteria": [
+        "主题切换无闪烁",
+        "用户偏好保存到localStorage",
+        "系统主题偏好检测",
+        "所有组件支持主题变量"
+      ]
+    }
+  ],
+  "stats": {
+    "total_features": 5,
+    "completed_features": 0,
+    "in_progress_features": 0,
+    "pending_features": 5,
+    "completion_percentage": 0
+  }
+}

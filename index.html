@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Selector - AI Teams with Ralph Loop</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            color: #24292e;
+            background-color: #f6f8fa;
+        }
+        .container {
+            background-color: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #2f363d;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        .subtitle {
+            color: #57606a;
+            font-size: 1.2em;
+            margin-bottom: 40px;
+        }
+        .language-options {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin: 40px 0;
+        }
+        .language-card {
+            border: 2px solid #e1e4e8;
+            border-radius: 8px;
+            padding: 30px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s ease;
+            background-color: #fafbfc;
+        }
+        .language-card:hover {
+            border-color: #0969da;
+            background-color: #f6f8fa;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(9, 105, 218, 0.1);
+        }
+        .language-card h2 {
+            margin: 0 0 10px 0;
+            color: #0969da;
+        }
+        .language-card p {
+            margin: 0;
+            color: #57606a;
+        }
+        .language-card.chinese {
+            border-left: 4px solid #cf222e;
+        }
+        .language-card.english {
+            border-left: 4px solid #1a7f37;
+        }
+        .github-link {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e1e4e8;
+            color: #57606a;
+            font-size: 0.9em;
+        }
+        .github-link a {
+            color: #0969da;
+            text-decoration: none;
+        }
+        .github-link a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            .language-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AI Teams with Ralph Loop</h1>
+        <div class="subtitle">Multi‑Agent Frontend Development Workflow Templates</div>
+
+        <p>Please select your preferred language to view the documentation:</p>
+
+        <div class="language-options">
+            <a href="README.md" class="language-card chinese">
+                <h2>中文文档 (Chinese)</h2>
+                <p>查看完整的中文版说明文档、工作流指南和配置模板</p>
+            </a>
+
+            <a href="README-en.md" class="language-card english">
+                <h2>English Documentation</h2>
+                <p>View complete English documentation, workflow guides, and configuration templates</p>
+            </a>
+        </div>
+
+        <div class="github-link">
+            <p>📁 This repository contains documentation for an AI‑powered frontend development workflow based on the <strong>Ralph Loop</strong> (continuous iteration cycle).</p>
+            <p>🔗 <a href="https://github.com/Bokrystal/AiTeamsWithRalphLoop">View on GitHub</a> | 📄 <a href="CLAUDE.md">CLAUDE.md</a></p>
+        </div>
+    </div>
+</body>
+</html>

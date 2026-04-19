@@ -1,0 +1,204 @@
+{
+  "version": "1.0",
+  "figma_file_url": "https://www.figma.com/file/example/project-design",
+  "extracted_at": "2026-04-19T10:02:00Z",
+  "design_language": "赛博朋克 (Cyberpunk)",
+
+  "color_palette": {
+    "primary": {
+      "neon_blue": "#00F3FF",
+      "neon_pink": "#FF00FF",
+      "cyber_purple": "#9D00FF"
+    },
+    "background": {
+      "deep_space": "#0A0A0F",
+      "dark_slate": "#1A1A2E",
+      "carbon": "#2D2D3A"
+    },
+    "text": {
+      "white": "#FFFFFF",
+      "light_gray": "#E0E0E0",
+      "medium_gray": "#888888"
+    },
+    "accent": {
+      "electric_green": "#00FF9D",
+      "warning_orange": "#FF6B00",
+      "error_red": "#FF0055"
+    }
+  },
+
+  "typography": {
+    "font_families": {
+      "heading": "'Orbitron', sans-serif",
+      "body": "'Rajdhani', sans-serif",
+      "mono": "'JetBrains Mono', 'Cascadia Code', monospace"
+    },
+    "scale": {
+      "h1": { "size": "3.5rem", "weight": 700, "line_height": 1.1 },
+      "h2": { "size": "2.5rem", "weight": 600, "line_height": 1.2 },
+      "h3": { "size": "2rem", "weight": 600, "line_height": 1.3 },
+      "body_large": { "size": "1.25rem", "weight": 400, "line_height": 1.5 },
+      "body": { "size": "1rem", "weight": 400, "line_height": 1.6 },
+      "caption": { "size": "0.875rem", "weight": 400, "line_height": 1.4 }
+    }
+  },
+
+  "spacing": {
+    "base_unit": 8,
+    "scale": {
+      "xxs": "4px",
+      "xs": "8px",
+      "sm": "16px",
+      "md": "24px",
+      "lg": "32px",
+      "xl": "48px",
+      "xxl": "64px",
+      "xxxl": "96px"
+    },
+    "breakpoints": {
+      "mobile": "480px",
+      "tablet": "768px",
+      "desktop": "1024px",
+      "wide": "1280px"
+    }
+  },
+
+  "effects": {
+    "shadows": {
+      "neon_glow": "0 0 20px rgba(0, 243, 255, 0.7)",
+      "neon_glow_pink": "0 0 20px rgba(255, 0, 255, 0.7)",
+      "depth_low": "0 2px 8px rgba(0, 0, 0, 0.2)",
+      "depth_high": "0 8px 32px rgba(0, 0, 0, 0.4)"
+    },
+    "gradients": {
+      "cyber_horizontal": "linear-gradient(90deg, #00F3FF 0%, #FF00FF 100%)",
+      "cyber_vertical": "linear-gradient(180deg, #00F3FF 0%, #FF00FF 100%)",
+      "dark_diagonal": "linear-gradient(135deg, #0A0A0F 0%, #1A1A2E 100%)"
+    },
+    "animations": {
+      "pulse_neon": "pulse-neon 2s infinite",
+      "scan_line": "scan-line 3s linear infinite",
+      "hover_lift": "transform 0.2s ease, box-shadow 0.2s ease"
+    }
+  },
+
+  "components": {
+    "NavBar": {
+      "frame_id": "frame:Header",
+      "node_id": "component:NavBar",
+      "layout": {
+        "desktop": { "direction": "horizontal", "justify": "space-between", "align": "center" },
+        "mobile": { "direction": "vertical", "justify": "flex-start", "align": "stretch" }
+      },
+      "styles": {
+        "height": "64px",
+        "background": "rgba(10, 10, 15, 0.9)",
+        "backdrop_filter": "blur(10px)",
+        "border_bottom": "1px solid rgba(0, 243, 255, 0.3)"
+      },
+      "typography": {
+        "menu_items": { "font_family": "body", "size": "body", "weight": 500 }
+      },
+      "states": {
+        "hover": { "color": "neon_blue", "text_shadow": "neon_glow" },
+        "active": { "color": "neon_pink" }
+      }
+    },
+
+    "HeroSection": {
+      "frame_id": "frame:Hero",
+      "node_id": "component:HeroSection",
+      "layout": {
+        "type": "flex",
+        "direction": "column",
+        "justify": "center",
+        "align": "center",
+        "min_height": "100vh"
+      },
+      "styles": {
+        "background": "dark_diagonal",
+        "position": "relative",
+        "overflow": "hidden"
+      },
+      "elements": {
+        "title": {
+          "typography": { "font_family": "heading", "size": "h1", "weight": 700 },
+          "color": "white",
+          "text_shadow": "neon_glow",
+          "margin_bottom": "xl"
+        },
+        "subtitle": {
+          "typography": { "font_family": "body", "size": "body_large", "weight": 400 },
+          "color": "light_gray",
+          "max_width": "600px",
+          "text_align": "center"
+        }
+      }
+    },
+
+    "PostCard": {
+      "frame_id": "frame:BlogList",
+      "node_id": "component:PostCard",
+      "layout": {
+        "type": "grid",
+        "columns": { "desktop": 3, "tablet": 2, "mobile": 1 },
+        "gap": "lg"
+      },
+      "styles": {
+        "background": "dark_slate",
+        "border_radius": "12px",
+        "padding": "lg",
+        "transition": "hover_lift"
+      },
+      "states": {
+        "hover": {
+          "transform": "translateY(-4px)",
+          "box_shadow": "0 12px 40px rgba(0, 243, 255, 0.3)"
+        }
+      }
+    }
+  },
+
+  "frames": {
+    "Header": {
+      "id": "frame:Header",
+      "name": "Header / Navigation",
+      "width": 1440,
+      "height": 64,
+      "description": "网站顶部导航栏，包含Logo和主导航"
+    },
+    "Hero": {
+      "id": "frame:Hero",
+      "name": "Hero Section",
+      "width": 1440,
+      "height": 800,
+      "description": "首屏英雄区域，主标题和行动号召"
+    },
+    "BlogList": {
+      "id": "frame:BlogList",
+      "name": "Blog Post List",
+      "width": 1440,
+      "height": 1200,
+      "description": "博客文章网格列表"
+    },
+    "Footer": {
+      "id": "frame:Footer",
+      "name": "Footer",
+      "width": 1440,
+      "height": 300,
+      "description": "页面底部区域"
+    }
+  },
+
+  "design_tokens": {
+    "css_variables": {
+      "--color-neon-blue": "#00F3FF",
+      "--color-neon-pink": "#FF00FF",
+      "--color-deep-space": "#0A0A0F",
+      "--color-dark-slate": "#1A1A2E",
+      "--font-heading": "'Orbitron', sans-serif",
+      "--font-body": "'Rajdhani', sans-serif",
+      "--spacing-unit": "8px"
+    }
+  }
+}
